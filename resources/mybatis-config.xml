@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    别名:简化映射文件中对类的引用，没有别名则需要写出类的完整名称-->
+    <typeAliases>
+        <package name="com.chnenan.study.database.data"/>
+    </typeAliases>
+
+<!--    数据源-->
+    <environments default="mysql">
+        <environment id="mysql">
+<!--            事务连接类型-->
+            <transactionManager type="JDBC"></transactionManager>
+<!--            数据源类型-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/demo0910?serverTimezone=Asia/Shanghai"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    关联映射文件-->
+<!--    引入映射文件的四种方式：-->
+<!--    1、相对路径引入 resource="mapper/UserMapper.xml"-->
+<!--    2、绝对路径引入 url="file:\\\D:\sts-bundle\workplace\mybatis_demo\src\main\resources\mapper\UserMapper.xml"-->
+<!--    3、mapper接口引入 class="com.mybatis_demo.mapper.UserMapper"-->
+<!--    4、package引入 name="com.mybatis_demo.mapper"-->
+<!--    注意（3、4）：需要对应的mapper.xml与接口mapper处于同一包下才可以，且xml文件名与接口名要相同，xml文件中的namespace必须是对应接口的全包名-->
+    <mappers>
+        <mapper resource="com.chnenan.study.database.data.TDemoFile"></mapper>
+    </mappers>
+</configuration>
