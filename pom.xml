@@ -77,5 +77,14 @@
         </plugin>
       </plugins>
     </pluginManagement>
+<!--    将IDEA maven项目中src源代码下的xml等资源文件编译进classes文件夹-->
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>

@@ -1,4 +1,4 @@
-package com.chnenan.study.database.data;
+package com.chennan.study.database.data;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

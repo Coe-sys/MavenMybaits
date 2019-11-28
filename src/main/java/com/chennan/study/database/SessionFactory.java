@@ -1,4 +1,4 @@
-package com.chnenan.study.database;
+package com.chennan.study.database;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -30,6 +30,7 @@ public class SessionFactory {
     }
 
     public static SqlSession getSession(){
+        //return sessionFactory.openSession(true);true自动提交事务/false手动提交事务默认
         return sessionFactory.openSession();
     }
 }
