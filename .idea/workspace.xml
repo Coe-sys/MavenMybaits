@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6108e06-1655-43d8-978b-d15e3a1f3a1f" name="Default Changelist" comment="" />
+    <list default="true" id="a6108e06-1655-43d8-978b-d15e3a1f3a1f" name="Default Changelist" comment="&quot;实现文件上传和删除功能11.29&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chennan/servlet/FileAllServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chennan/servlet/FileAllServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +97,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -293,7 +296,7 @@
       <workItem from="1574950278855" duration="1891000" />
       <workItem from="1574989106987" duration="3505000" />
       <workItem from="1574993186580" duration="10697000" />
-      <workItem from="1575010055649" duration="481000" />
+      <workItem from="1575010055649" duration="2099000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574839940980</created>
@@ -316,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574841255071</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;实现文件上传和删除功能11.29&quot;">
+      <created>1575010752791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575010752791</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +377,8 @@
     </ignored-roots>
     <MESSAGE value="test" />
     <MESSAGE value="&quot;上传&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;上传&quot;" />
+    <MESSAGE value="&quot;实现文件上传和删除功能11.29&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;实现文件上传和删除功能11.29&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="155" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575006771650">
@@ -378,6 +389,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="53" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575005504887" />
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1575011896192">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575011896192" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1574998016916">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -398,14 +413,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="291" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575009908887" />
-    <state x="194" y="0" key="SettingsEditor" timestamp="1574998019165">
+    <state x="194" y="0" key="SettingsEditor" timestamp="1575011374531">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="194" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1574998019165" />
-    <state x="359" y="160" key="git4idea.merge.GitPullDialog" timestamp="1575010515542">
+    <state x="194" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575011374531" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1575011891352">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="359" y="160" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1575010515542" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575011891352" />
+    <state x="359" y="160" key="git4idea.merge.GitPullDialog" timestamp="1575010763785">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="359" y="160" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1575010763785" />
     <state x="57" y="0" key="new project wizard" timestamp="1574994674289">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

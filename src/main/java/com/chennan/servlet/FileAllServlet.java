@@ -167,4 +167,8 @@ public class FileAllServlet extends HttpServlet {
         }
     }
 
+    public void test(){
+        System.out.println("输出完成");
+    }
+
 }
