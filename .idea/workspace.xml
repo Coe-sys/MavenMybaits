@@ -97,7 +97,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -296,7 +296,7 @@
       <workItem from="1574950278855" duration="1891000" />
       <workItem from="1574989106987" duration="3505000" />
       <workItem from="1574993186580" duration="10697000" />
-      <workItem from="1575010055649" duration="2099000" />
+      <workItem from="1575010055649" duration="2693000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574839940980</created>
@@ -413,10 +413,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="291" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575009908887" />
-    <state x="194" y="0" key="SettingsEditor" timestamp="1575011374531">
+    <state x="194" y="0" key="SettingsEditor" timestamp="1575012736143">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="194" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575011374531" />
+    <state x="194" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575012736143" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1575011891352">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

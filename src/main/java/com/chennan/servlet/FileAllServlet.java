@@ -38,13 +38,13 @@ public class FileAllServlet extends HttpServlet {
         //获得请求的方法
         String method = request.getParameter("method");
         //判断选择处理请求的方法
-        if("upload".equals(method)) {
+        if ("upload".equals(method)) {
             upload(request, response);
-        } else if("download".equals(method)) {
+        } else if ("download".equals(method)) {
 
-        } else if("update".equals(method)) {
+        } else if ("update".equals(method)) {
 
-        } else if("deleting".equals(method)) {
+        } else if ("deleting".equals(method)) {
             deleting(request, response);
         } else {
             query(request, response);
@@ -54,6 +54,7 @@ public class FileAllServlet extends HttpServlet {
 
     /**
      * 查询文件看数据
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -81,6 +82,7 @@ public class FileAllServlet extends HttpServlet {
 
     /**
      * 上传文件
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -92,7 +94,7 @@ public class FileAllServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         //获得响应内容输出流
         Writer out = response.getWriter();
-        try{
+        try {
             //获得文件组件对象
             Part part = request.getPart("file");
             //获得文件相关信息
@@ -102,9 +104,9 @@ public class FileAllServlet extends HttpServlet {
             //获得文件的后缀
             String fileSuffix = fileName.substring(fileName.lastIndexOf("."));
             //获得文件大小
-            int fileSize = (int)part.getSize();
+            int fileSize = (int) part.getSize();
             //生成随机字符串作为文件物理名称，形成相对路径
-            String fileUrl = UUID.randomUUID().toString().replace("-","");
+            String fileUrl = UUID.randomUUID().toString().replace("-", "");
             //复制文件到磁盘中
             part.write(fileUrl);
 
@@ -166,9 +168,4 @@ public class FileAllServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-    public void test(){
-        System.out.println("输出完成");
-    }
-
 }
