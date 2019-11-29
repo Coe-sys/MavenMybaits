@@ -45,18 +45,18 @@ public class TestMybatis {
 //        使用映射接口查询数据
         //获得映射结构对象
 
-        try {
-            ITDemoFileMapper itDemoFileMapper = session.getMapper(ITDemoFileMapper.class);
-            List<TDemoFile> list = itDemoFileMapper.selectAll();
-
-            for (TDemoFile file:list){
-                System.out.println(file.getFileId()+", "+file.getFileName()+", "+
-                        file.getFileType()+", "+file.getFileSize());
-            }
-            session.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ITDemoFileMapper itDemoFileMapper = session.getMapper(ITDemoFileMapper.class);
+//            List<TDemoFile> list = itDemoFileMapper.selectAll();
+//
+//            for (TDemoFile file:list){
+//                System.out.println(file.getFileId()+", "+file.getFileName()+", "+
+//                        file.getFileType()+", "+file.getFileSize());
+//            }
+//            session.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }
 }

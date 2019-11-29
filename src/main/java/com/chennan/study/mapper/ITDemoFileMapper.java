@@ -18,7 +18,7 @@ public interface ITDemoFileMapper {
      * @return
      * @throws Exception
      */
-    public List<TDemoFile> selectAll() throws Exception;
+    public List<TDemoFile> selectAll(String fileName) throws Exception;
 
     /**
      * 通过id查询

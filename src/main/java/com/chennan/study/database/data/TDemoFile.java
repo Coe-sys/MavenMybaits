@@ -28,9 +28,22 @@ public class TDemoFile implements Serializable {
      */
     private String fileType;
     /**
+     * 后缀
+     */
+    private String fileSuffix;
+    /**
      * 文件长度
      */
     private Integer fileSize;
+
+    public String getFileSuffix() {
+        return fileSuffix;
+    }
+
+    public void setFileSuffix(String fileSuffix) {
+        this.fileSuffix = fileSuffix;
+    }
+
     /**
      * 操作时间
      */

@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:55:08 +0800] "GET /MavenMybaits HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:55:08 +0800] "GET /MavenMybaits/ HTTP/1.1" 404 977 http-bio-8080-exec-3 17
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:55:50 +0800] "GET /MavenMybaits HTTP/1.1" 302 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:55:50 +0800] "GET /MavenMybaits/ HTTP/1.1" 404 977 http-bio-8080-exec-6 3
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:55:58 +0800] "GET /MavenMybaits/index.html HTTP/1.1" 404 997 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [29/Nov/2019:09:56:02 +0800] "GET /MavenMybaits/index.jsp HTTP/1.1" 404 995 http-bio-8080-exec-8 2

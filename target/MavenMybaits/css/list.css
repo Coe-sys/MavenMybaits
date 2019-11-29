@@ -1,0 +1,43 @@
+@charset "UTF-8";
+header {
+    position: relative;
+    width: 100%;
+    margin-top: 2px;
+}
+header ul li:first-child {
+    margin-left: 15px;
+}
+article {
+    position: relative;
+    width: 90%;
+    min-width: 900px;
+    margin: 50px auto 0px;
+}
+article .search {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: right;
+}
+article .search section {
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+}
+article section.btns section {
+    height: 40px;
+    line-height: 40px;
+}
+article section.btns section:nth-child(2) {
+    text-align: center;
+}
+article section.btns section:last-child ul{
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+}
+article section.btns section:last-child ul li {
+    margin-top: 0px;
+}
