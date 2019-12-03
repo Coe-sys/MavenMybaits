@@ -26,7 +26,7 @@ public interface ITDemoFileMapper {
      * @return
      * @throws Exception
      */
-    public TDemoFile gitById(Integer id) throws  Exception;
+    public TDemoFile getById(Integer id) throws  Exception;
 
     /**
      * 插入方法

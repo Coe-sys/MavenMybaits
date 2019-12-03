@@ -1,0 +1,15 @@
+@charset "UTF-8";
+header {
+    position: relative;
+    width: 100%;
+    margin-top: 2px;
+}
+header ul li:first-child {
+    margin-left: 15px;
+}
+article {
+    position: relative;
+    width: 90%;
+    min-width: 900px;
+    margin: 50px auto 0px;
+}

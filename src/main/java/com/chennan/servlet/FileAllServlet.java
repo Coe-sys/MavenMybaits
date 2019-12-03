@@ -40,16 +40,132 @@ public class FileAllServlet extends HttpServlet {
         //判断选择处理请求的方法
         if ("upload".equals(method)) {
             upload(request, response);
-        } else if ("download".equals(method)) {
-
-        } else if ("update".equals(method)) {
-
+        } else if("updateView".equals(method)) {
+            updateView(request, response);
+        } else if("update".equals(method)) {
+            update(request, response);
+        } else if("updateAjax".equals(method)) {
+            updateAjax(request, response);
         } else if ("deleting".equals(method)) {
             deleting(request, response);
         } else {
             query(request, response);
         }
 
+    }
+
+    /**
+     * 修改文件
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void update(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        SqlSession session = null;
+        try {
+            //获得请求的参数
+            int fileId = Integer.parseInt(request.getParameter("fileId"));
+            String fileName = request.getParameter("fileName");
+            //获得会话
+            session = SessionFactory.getSession();
+            //获得访问数据的映射接口
+            ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
+            //获得修改的文件对象
+            TDemoFile file = fileMapper.getById(fileId);
+            //修改文件信息
+            file.setFileName(fileName);
+            file.setOperTime(new Timestamp(System.currentTimeMillis()));
+            //访问数据修改文件信息
+            fileMapper.update(file);
+            //提交事务
+            session.commit();
+            //查询文件列表数据
+            List<TDemoFile> list = fileMapper.selectAll(null);
+            //转发数据
+            request.setAttribute("list", list);
+            //跳转到列表界面
+            request.getRequestDispatcher("/admin/files/fileall.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * 修改文件的视图页面
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void updateView(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        //声明会话变量
+        SqlSession session = null;
+        try {
+            //获得文件ID
+            String fileId = request.getParameter("id");
+            //获得会话
+            session = SessionFactory.getSession();
+            //获得访问数据的映射接口
+            ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
+            //访问数据库，查询文件数据
+            TDemoFile file = fileMapper.getById(Integer.parseInt(fileId));
+            //文件对象添加给请求，转发数据
+            request.setAttribute("file", file);
+            //跳转到修改视图页面
+            request.getRequestDispatcher("/admin/files/fileallupdate.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * 修改文件(Ajax)
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void updateAjax(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        SqlSession session = null;
+        //设置响应内容的类型
+        response.setContentType("text/html;charset=UTF-8");
+        //获得响应内容输出流
+        Writer out = response.getWriter();
+        try {
+            //获得请求的参数
+            int fileId = Integer.parseInt(request.getParameter("fileId"));
+            String fileName = request.getParameter("fileName");
+            //获得会话
+            session = SessionFactory.getSession();
+            //获得访问数据的映射接口
+            ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
+            //获得修改的文件对象
+            TDemoFile file = fileMapper.getById(fileId);
+            //修改文件信息
+            file.setFileName(fileName);
+            file.setOperTime(new Timestamp(System.currentTimeMillis()));
+            //访问数据修改文件信息
+            fileMapper.update(file);
+            //提交事务
+            session.commit();
+            //int i = 8/0;
+            //响应客户端
+            out.write("{\"success\": true}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            out.write("{\"success\": false}");
+        } finally {
+            session.close();
+            out.close();
+        }
     }
 
     /**
@@ -91,7 +207,7 @@ public class FileAllServlet extends HttpServlet {
     public void upload(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //设置响应内容的类型
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         //获得响应内容输出流
         Writer out = response.getWriter();
         try {
@@ -99,6 +215,7 @@ public class FileAllServlet extends HttpServlet {
             Part part = request.getPart("file");
             //获得文件相关信息
             String fileName = part.getSubmittedFileName();
+            System.out.println(fileName);
             //获得文件类型
             String fileType = part.getContentType();
             //获得文件的后缀
