@@ -6,19 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6108e06-1655-43d8-978b-d15e3a1f3a1f" name="Default Changelist" comment="&quot;实现文件上传和删除功能11.29&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chennan/util/EncodingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/files/fileallupdate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/oper.css" afterDir="false" />
+    <list default="true" id="a6108e06-1655-43d8-978b-d15e3a1f3a1f" name="Default Changelist" comment="&quot;实现文件下载和更新功能12.03&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chennan/servlet/FileAllServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chennan/servlet/FileAllServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chennan/study/mapper/ITDemoFileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chennan/study/mapper/ITDemoFileMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/files/fileall.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/files/fileall.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/files/fileallupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/files/fileallupdate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MavenMybaits/WEB-INF/classes/com/chennan/servlet/FileAllServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MavenMybaits/WEB-INF/classes/com/chennan/servlet/FileAllServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MavenMybaits/WEB-INF/classes/com/chennan/study/mapper/ITDemoFileMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MavenMybaits/WEB-INF/classes/com/chennan/study/mapper/ITDemoFileMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MavenMybaits/admin/files/fileall.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MavenMybaits/admin/files/fileall.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MavenMybaits/admin/files/fileallupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MavenMybaits/admin/files/fileallupdate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chennan/servlet/FileAllServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chennan/servlet/FileAllServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chennan/study/mapper/ITDemoFileMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chennan/study/mapper/ITDemoFileMapper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,14 +102,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mavendemo" />
+    <property name="last_opened_file_path" value="D:/FileManager/案例/demo1023" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -191,7 +187,7 @@
       </method>
     </configuration>
     <configuration name="File" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.45" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MavenMybaits_war_exploded/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="MavenMybaits:war exploded">
@@ -203,8 +199,8 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_MavenMybaits" />
       </server-settings>
-      <log_file checked="false" alias="Tomcat Localhost Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost.*" />
-      <log_file checked="false" alias="Tomcat Catalina Log" path="%IDEA_RUN:CATALINA_BASE%/logs/catalina.*" />
+      <log_file alias="Tomcat Localhost Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost.*" />
+      <log_file alias="Tomcat Catalina Log" path="%IDEA_RUN:CATALINA_BASE%/logs/catalina.*" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
@@ -277,7 +273,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.21533613" />
+          <option name="contentProportion" value="0.11678267" />
           <treeState>
             <expand>
               <path>
@@ -287,7 +283,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -322,6 +318,14 @@
       <workItem from="1575250186908" duration="5519000" />
       <workItem from="1575265271001" duration="1026000" />
       <workItem from="1575335201200" duration="1390000" />
+      <workItem from="1575347235611" duration="224000" />
+      <workItem from="1575445495666" duration="1373000" />
+      <workItem from="1575448181800" duration="1086000" />
+      <workItem from="1575457560444" duration="3730000" />
+      <workItem from="1575462139691" duration="383000" />
+      <workItem from="1575507865717" duration="9806000" />
+      <workItem from="1575524416195" duration="1927000" />
+      <workItem from="1575526488202" duration="767000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574839940980</created>
@@ -351,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575010752791</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;实现文件下载和更新功能12.03&quot;">
+      <created>1575347393215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575347393215</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,61 +414,98 @@
     <MESSAGE value="test" />
     <MESSAGE value="&quot;上传&quot;" />
     <MESSAGE value="&quot;实现文件上传和删除功能11.29&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;实现文件上传和删除功能11.29&quot;" />
+    <MESSAGE value="&quot;实现文件下载和更新功能12.03&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;实现文件下载和更新功能12.03&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="155" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575006771650">
+    <state x="275" y="27" key="#Notifications" timestamp="1575524483301">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="155" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1575006771650" />
+    <state x="275" y="27" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1575524483301" />
+    <state x="155" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575525377570">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="155" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1575525377570" />
     <state x="488" y="53" key="#com.intellij.ide.util.MemberChooser" timestamp="1575258979511">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="53" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575258979511" />
-    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1575011896192">
+    <state x="283" y="0" key="CommitChangelistDialog2" timestamp="1575527383780">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575011896192" />
+    <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575527383780" />
     <state x="92" y="92" width="1182" height="554" key="DiffContextDialog" timestamp="1575013423234">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="92" y="92" width="1182" height="554" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1575013423234" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1575252785660">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1575508547111">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575252785660" />
-    <state width="1015" height="112" key="GridCell.Tab.0.bottom" timestamp="1575340898554">
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575508547111" />
+    <state width="1141" height="190" key="GridCell.Tab.0.bottom" timestamp="1575527298626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1015" height="112" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575340898554" />
-    <state width="1015" height="112" key="GridCell.Tab.0.center" timestamp="1575340898554">
+    <state width="1141" height="190" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575527298626" />
+    <state width="1141" height="190" key="GridCell.Tab.0.center" timestamp="1575527298626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1015" height="112" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575340898554" />
-    <state width="1015" height="112" key="GridCell.Tab.0.left" timestamp="1575340898554">
+    <state width="1141" height="190" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575527298626" />
+    <state width="1141" height="190" key="GridCell.Tab.0.left" timestamp="1575527298626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1015" height="112" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575340898554" />
-    <state width="1015" height="112" key="GridCell.Tab.0.right" timestamp="1575340898554">
+    <state width="1141" height="190" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575527298626" />
+    <state width="1141" height="190" key="GridCell.Tab.0.right" timestamp="1575527298626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1015" height="112" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575340898554" />
-    <state x="194" y="0" key="SettingsEditor" timestamp="1575012736143">
+    <state width="1141" height="190" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575527298626" />
+    <state width="1141" height="190" key="GridCell.Tab.1.bottom" timestamp="1575527298627">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="194" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575012736143" />
+    <state width="1141" height="190" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.1.center" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.1.left" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.1.right" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.2.bottom" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.2.center" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.2.left" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state width="1141" height="190" key="GridCell.Tab.2.right" timestamp="1575527298627">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1141" height="190" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1575527298627" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1575524478576">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575524478576" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1575250862391">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1575250862391" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1575347349163">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1575527373887">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575347349163" />
-    <state x="359" y="160" key="git4idea.merge.GitPullDialog" timestamp="1575347270678">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575527373887" />
+    <state x="359" y="160" key="git4idea.merge.GitPullDialog" timestamp="1575527288252">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="359" y="160" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1575347270678" />
+    <state x="359" y="160" key="git4idea.merge.GitPullDialog/0.0.1366.738@0.0.1366.738" timestamp="1575527288252" />
     <state x="57" y="0" key="new project wizard" timestamp="1574994674289">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

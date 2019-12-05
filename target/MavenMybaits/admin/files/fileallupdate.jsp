@@ -25,7 +25,7 @@
 <body>
     <header>
         <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">全部文件</a></li>
+            <li role="presentation" class="active"><a href="javascript:void(0);" onclick="history.back();">全部文件</a></li>
         </ul>
     </header>
     <article>

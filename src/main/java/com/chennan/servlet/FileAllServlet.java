@@ -156,7 +156,6 @@ public class FileAllServlet extends HttpServlet {
             fileMapper.update(file);
             //提交事务
             session.commit();
-            //int i = 8/0;
             //响应客户端
             out.write("{\"success\": true}");
         } catch (Exception e) {
@@ -178,11 +177,12 @@ public class FileAllServlet extends HttpServlet {
      */
     public void query(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        SqlSession session = null;
         try {
             //获得搜索文件名
             String fileName = request.getParameter("sfileName");
             //获得会话（服务器与数据库）
-            SqlSession session = SessionFactory.getSession();
+            session = SessionFactory.getSession();
             //获得数据访问映射接口对象
             ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
             //查询返回数据列表
@@ -193,6 +193,8 @@ public class FileAllServlet extends HttpServlet {
             request.getRequestDispatcher("/admin/files/fileall.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            session.close();
         }
     }
 
@@ -206,6 +208,8 @@ public class FileAllServlet extends HttpServlet {
      */
     public void upload(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //定义Session变量
+        SqlSession session =null;
         //设置响应内容的类型
         request.setCharacterEncoding("UTF-8");
         //获得响应内容输出流
@@ -238,7 +242,7 @@ public class FileAllServlet extends HttpServlet {
             file.setFileSize(fileSize);
             file.setOperTime(new Timestamp(System.currentTimeMillis()));
             //获得会话
-            SqlSession session = SessionFactory.getSession();
+            session = SessionFactory.getSession();
             //获得访问数据的映射接口
             ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
             //访问数据库，插入文件数据
@@ -259,16 +263,20 @@ public class FileAllServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             out.write("{'success':false}");
+        }finally {
+            //关闭session
+            session.close();
         }
     }
 
     public void deleting(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        SqlSession session = null;
         try {
             //获得选择的id
             String[] ids = request.getParameterValues("id");
             //获得会话
-            SqlSession session = SessionFactory.getSession();
+            session = SessionFactory.getSession();
             //获得访问数据的映射接口
             ITDemoFileMapper fileMapper = session.getMapper(ITDemoFileMapper.class);
             //访问数据库，删除文件数据
@@ -283,6 +291,9 @@ public class FileAllServlet extends HttpServlet {
             request.getRequestDispatcher("/admin/files/fileall.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            //关闭session
+            session.close();
         }
     }
 }

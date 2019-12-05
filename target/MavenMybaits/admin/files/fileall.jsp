@@ -33,10 +33,6 @@
             var fileField = $("#file")[0];
             //弹出选择文件窗口
             fileField.click();
-            //获得表单对象
-            var form = $("#form1").get(0);
-            //设置请求路径
-            form.action = "servlet/fileall?method=updateView"
         }
 
         /**
@@ -116,16 +112,50 @@
             //清理文件域
             $("#file").val("");
         }
-        
+
+        /**
+         * 下载文件
+         */
         function download() {
-            
+            //获得选择的行数，选中复选框的数量
+            var count = $("#form1 input[name=id]:checked").length;
+            //判断是否未选择1行
+            if(count==0) {
+                parent.alert("提示","请至少选择1行数据!");
+                return;
+            }
+            //获得表单对象
+            var form = $("#form1").get(0);
+            //设置请求路径
+            form.action = "servlet/fileall?method=download";
+            //提交表单
+            form.submit();
+        }
+
+        /**
+         * 修改文件
+         */
+        function update() {
+            //获得选择的行数，选中复选框的数量
+            var count = $("#form1 input[name=id]:checked").length;
+            //判断是否未选择1行
+            if(count!=1) {
+                parent.alert("提示","请选择1行数据!");
+                return;
+            }
+            //获得表单对象
+            var form = $("#form1").get(0);
+            //设置请求路径
+            form.action = "servlet/fileall?method=updateView";
+            //提交表单
+            form.submit();
         }
 
         /**
          * 修改文件名
          */
         function updateFileName(thisz) {
-            //转换成JQuery对象
+           //转换成JQuery对象
             var cell = $(thisz);
             //获得单元格中文本
             var text = cell.text();
@@ -133,112 +163,66 @@
             cell.html("<input type='text' name='fileName' value='"+text+"' />");
             //获得添加的输入框
             var fileNameField = cell.children("input[name=fileName]");
-            //创建提交、撤销节点对象并添加给cell单元格
+            /*//创建提交、撤销节点对象并添加给cell单元格
             var commit = $("<span class='glyphicon glyphicon-ok' style='display:inline-block;margin:auto 5px;padding:2px;border-radius:3px;border:solid 1px #cccccc;color:green;cursor:pointer;' ></span>");
             var cancel = $("<span class='glyphicon glyphicon-remove' style='display:inline-block;padding:2px;border-radius:3px;border:solid 1px #cccccc;color:red;cursor:pointer;'></span>");
             commit.appendTo(cell);
-            cancel.appendTo(cell);
+            cancel.appendTo(cell);*/
             //获得焦点
             fileNameField.focus();
-            /*//取消事件绑定，防止事件重复绑定
-            fileNameField.off("blur");
             //绑定失去焦点事件
             fileNameField.on("blur", function() {
                 //获得修改后的文件名
                 var fileName = $(this).val();
                 //alert(fileName);
                 //判断未输入或未修改文件名
-                if(fileName&&fileName!=text) {
-                    //获得文件ID
-                    var fileId = $(this).parent().parent().children("td:first").children("input[name=id]").val();
-                    //alert(fileId);
-                    //封装请求参数
-                    var data = {"method":"updateAjax","fileId":fileId,"fileName":fileName};
-                    //提交数据到服务器
-                    $.post("servlet/fileall", data, function (data, status) {
-                        //判断修改是否成功
-                        if(data.success) {
-                            //修改单元格内容
-                            cell.html(fileNameField.val());
-                        } else {
-                            alert("修改文件失败!");
-                            //还原单元格内容
-                            cell.html(text);
-                        }
-                    }, "json");
-                } else {
-                    alert("请输入文件名!");
-                    //fileNameField.select();
-                }
-            });*/
-            //提交按钮绑定事件
-            commit.on("click", function() {
-                //获得修改后的文件名
-                var fileName = fileNameField.val();
-                //判断文件名是否未修改
-                if(fileName==text) {
-                    //alert("请修改文件名!");
-                    parent.alert("提示","请修改文件名!");
-                    fileNameField.select();
-                    return;
-                }
-                //判断文件名是否为""
-                if(!fileName) {
-                    parent.alert("提示","文件名不能空，请输入文件名!");
-                    fileNameField.focus();
-                    return;
-                }
-                //获得文件ID
-                var fileId = $(this).parent().parent().children("td:first").children("input[name=id]").val();
-                //alert(fileId);
-                //封装请求参数
-                var data = {"method":"updateAjax","fileId":fileId,"fileName":fileName};
-                //提交数据到服务器
-                $.post("servlet/fileall", data, function (data, status) {
-                    //判断修改是否成功
-                    if(data.success) {
-                        //修改单元格内容
-                        cell.html(fileNameField.val());
-                    } else {
-                        parent.alert("提示","修改文件失败!");
-                        //还原单元格内容
-                        cell.html(text);
-                    }
-                }, "json");
+                 if(fileName&&fileName!=text) {
+                     //获得文件ID
+                     var fileId = $(this).parent().parent().children("td:first").children("input[name=id]").val();
+                     //封装请求参数
+                     var data = {"method": "updateAjax", "fileId": fileId, "fileName": fileName};
+                     //提交数据到服务器
+                     $.post("servlet/fileall", data, function (data,status) {
+                         //判断修改是否成功
+                         if (data.success) {
+                             //修改单元格内容
+                             cell.html(fileNameField.val());
+                         } else {
+                             alert("修改文件失败!");
+                             //还原单元格内容
+                             cell.html(text);
+                         }
+                     },"json");
+                 }else if(fileName == text){
+                     alert("与原文件名相同");
+                     //获得焦点
+                     fileNameField.focus();
+                 }else {
+                     alert("文件名不能为空！")
+                 }
             });
-            //撤销按钮绑定事件
             cancel.on("click", function() {
                 cell.html(text);
             });
         }
 
-        function update() {
-            //获得选择的行数，选中复选框的数量
-            var count = $("#form1 input[name=id]:checked").length;
-            //判断是否未选择1行
-            if(count!=1) {
-                alert("请至少选择1行数据!");
-                return;
-            }
-        }
-        
         function deleting() {
             //获得选择的行数，选中复选框的数量
             var count = $("#form1 input[name=id]:checked").length;
             //判断是否未选择1行
             if(count==0) {
-                alert("请至少选择1行数据!");
+                parent.alert("提示","请至少选择1行数据!");
                 return;
             }
             //弹出选择对话框，让用户确定是否删除
-            if(confirm("您是否要删除选择的数据?")) {
+            parent.confirm("提示", "您是否要删除选择的数据?", function() {
                 //获得表单对象
                 var form = $("#form1").get(0);
                 //设置请求路径
                 form.action = "servlet/fileall?method=deleting";
                 //提交表单
                 form.submit();
-            }
+            });
         }
     </script>
 </head>
@@ -249,13 +233,13 @@
     </ul>
 </header>
 <article>
-        <section class="search">
-            <form method="post" action="servlet/fileall" class="form-inline">
-                <section class="form-group">
-                    <input type="text" name="sfileName" placeholder="按文件名搜索!" class="form-control" />
+    <section class="search">
+        <form method="post" action="servlet/fileall" class="form-inline">
+            <section class="form-group">
+                <input type="text" name="sfileName" placeholder="按文件名搜索!" class="form-control" />
                 <input type="submit" value="搜索" class="btn btn-warning" />
-        </section>
-            </form>
+            </section>
+        </form>
     </section>
     <form id="form1" method="post" action="">
         <table class="table table-bordered table-hover">
@@ -271,7 +255,7 @@
                 <tr>
                     <td><input type="checkbox" name="id" value="${file.fileId}"></td>
                     <td>${st.count}</td>
-                    <td>${file.fileName}</td>
+                    <td ondblclick="updateFileName(this);">${file.fileName}</td>
                     <td>${file.fileType}</td>
                     <td>${file.fileSize}</td>
                     <td><fmt:formatDate value="${file.operTime}" pattern="yyyy年MM月dd日 HH:mm:ss" /></td>
@@ -289,7 +273,7 @@
         <section class="col-xs-12 col-sm-4">
             <input type="button" value="上传文件" class="btn btn-primary" onclick="upload();" />
             <input type="button" value="下载文件" class="btn btn-info" onclick="download();" />
-            <input type="button" value="修改文件" class="btn btn-success" onclick="update();" />
+            <input type="button" value="修改文件" class="btn btn-success" onclick="update()" />
             <input type="button" value="删除文件" class="btn btn-danger" onclick="deleting();" />
         </section>
         <section class="col-xs-12 col-sm-4">共-3-行 共-1-页 当前第-1-页</section>
